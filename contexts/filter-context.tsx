@@ -7,6 +7,7 @@ interface FilterContextType {
   selectedBrands: string[]
   toggleCategory: (category: string) => void
   toggleBrand: (brand: string) => void
+  clearFilters: () => void
 }
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined)
@@ -31,12 +32,18 @@ export function FilterProvider({ children }: { children: ReactNode }) {
     )
   }
 
+  const clearFilters = () => {
+    setSelectedCategories([])
+    setSelectedBrands([])
+  }
+
   return (
     <FilterContext.Provider value={{
       selectedCategories,
       selectedBrands,
       toggleCategory,
-      toggleBrand
+      toggleBrand,
+      clearFilters
     }}>
       {children}
     </FilterContext.Provider>

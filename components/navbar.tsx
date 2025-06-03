@@ -42,7 +42,7 @@ export function Navbar() {
   ]
 
   return (
-    <header className="border-b">
+    <header className="border-b bg-white">
       <div className="flex h-16 items-center px-4 max-w-7xl mx-auto">
         <Sheet>
           <SheetTrigger asChild className="lg:hidden">
@@ -57,7 +57,7 @@ export function Navbar() {
                   key={route.href}
                   href={route.href}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
-                    route.active ? "text-black dark:text-white" : "text-muted-foreground"
+                    route.active ? "text-black" : "text-muted-foreground"
                   }`}
                 >
                   {route.label}
@@ -102,7 +102,7 @@ export function Navbar() {
                 width={42}
                 height={42}
               />
-          <span className="text-xl font-bold">Sejasatek</span>
+          <span className="text-xl font-bold text-black">Sejasatek</span>
         </div>
 
         <nav className="mx-6 hidden lg:flex items-center space-x-4 lg:space-x-6">
@@ -111,7 +111,7 @@ export function Navbar() {
               key={route.href}
               href={route.href}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                route.active ? "text-black dark:text-white" : "text-muted-foreground"
+                route.active ? "text-black" : "text-muted-foreground"
               }`}
             >
               {route.label}

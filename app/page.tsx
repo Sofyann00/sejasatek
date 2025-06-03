@@ -1,4 +1,5 @@
 "use client"
+import React from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { Button } from "@/components/ui/button"
@@ -54,17 +55,17 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="min-h-screen px-4 py-32 text-center relative overflow-hidden flex items-center bg-white">
+      <section className="min-h-screen px-4 py-32 text-center relative overflow-hidden flex items-center bg-gradient-to-b from-white to-gray-50">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
 
         <div className="max-w-6xl mx-auto relative">
           <div className="relative">
             <div className="relative">
-              <h1 className="text-7xl font-bold tracking-tight sm:text-9xl text-primary">
+              <h1 className="text-7xl font-bold sm:text-9xl text-black bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-700">
                 Transform Your Ideas
               </h1>
-              <h2 className="text-5xl font-bold tracking-tight sm:text-7xl mt-4 text-primary">
+              <h2 className="text-5xl font-bold sm:text-7xl mt-4 text-black bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-gray-500">
                 Into Reality
               </h2>
             </div>
@@ -77,8 +78,8 @@ export default function Home() {
           
           <div className="mt-16 flex items-center justify-center gap-x-8">
             <Link href="/marketplace">
-              <Button size="lg" className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-primary hover:bg-primary/90 transition-all duration-300 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                <span className="relative flex items-center">
+              <Button size="lg" className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded-xl shadow-lg hover:shadow-xl">
+                <span className="relative flex items-center text-black">
                   View Services
                   <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -89,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Product Carousel Section */}
-      <section className="py-40 relative overflow-hidden bg-gray-50">
+      <section className="py-40 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
@@ -100,7 +101,7 @@ export default function Home() {
                 Our Services
               </span>
             </div>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl text-primary">
+            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-700">
               Technology Solutions That Scale
             </h2>
           </div>
@@ -108,7 +109,7 @@ export default function Home() {
           <div ref={sliderRef} className="keen-slider">
             {products.map((product) => (
               <div key={product.id} className="keen-slider__slide">
-                <Card className="group relative border border-gray-100 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <Card className="group relative border border-gray-100 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden">
                   <CardContent className="relative p-8">
                     <div className="aspect-square relative overflow-hidden rounded-xl">
                       <Image
@@ -119,8 +120,8 @@ export default function Home() {
                       />
                     </div>
                     <div className="mt-8">
-                      <h3 className="font-semibold text-xl group-hover:text-primary transition-colors duration-300">{product.name}</h3>
-                      <p className="text-sm text-gray-600 mt-2 group-hover:text-primary/80 transition-colors duration-300">{formatPrice(product.price)}</p>
+                      <h3 className="font-semibold text-xl group-hover:text-secondary transition-colors duration-300 text-black">{product.name}</h3>
+                      <p className="text-sm text-gray-600 mt-2 group-hover:text-secondary/80 transition-colors duration-300">{formatPrice(product.price)}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -131,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-40 sm:py-48 relative overflow-hidden bg-white">
+      <section className="py-40 sm:py-48 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
@@ -142,7 +143,7 @@ export default function Home() {
                 Our Expertise
               </span>
             </div>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl text-primary">
+            <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-700">
               Built for Performance
             </h2>
           </div>
@@ -151,10 +152,10 @@ export default function Home() {
             <dl className="grid max-w-xl grid-cols-1 gap-x-12 gap-y-16 lg:max-w-none lg:grid-cols-3">
               {features.map((feature) => (
                 <div key={feature.name} className="group relative">
-                  <div className="relative flex flex-col p-8 rounded-xl bg-white border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <dt className="flex items-center gap-x-4 text-lg font-semibold leading-7">
-                      <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        {feature.icon}
+                  <div className="relative flex flex-col p-8 rounded-xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <dt className="flex items-center gap-x-4 text-lg font-semibold leading-7 text-black">
+                      <div className="p-3 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-colors duration-300">
+                        {feature.icon && React.cloneElement(feature.icon, { className: "h-5 w-5 text-secondary" })}
                       </div>
                       {feature.name}
                     </dt>
